@@ -155,10 +155,14 @@ level of detail of your work and its results.
 Table with role names, person names, and their expectations with respect
 to the architecture and its documentation.
 
-| Role/Name   | Contact        | Expectations       |
-|-------------|----------------|--------------------|
-| *\<Role-1>* | *\<Contact-1>* | *\<Expectation-1>* |
-| *\<Role-2>* | *\<Contact-2>* | *\<Expectation-2>* |
+| Role                     | Name                 | Contact                      | Expectations       |
+|--------------------------|----------------------|------------------------------|--------------------|
+| *\<Marketing Manager>*   | *\<Sarah Chen>*      | *\<Bold Branding Agency>*    | *\<Expectation-1>* |
+| *\<Project Manager>*     | *\<Michael Nguyen>*  | *\<Digital Dreams Inc.>*     | *\<Expectation-2>* |
+| *\<Lead Developer>*      | *\<Ava Patel>*       | *\<Pixel Perfect Solutions>* | *\<Expectation-2>* |
+| *\<UX/UI Designer>*      | *\<Emily Wong>*      | *\<Creative Co.>*            | *\<Expectation-2>* |
+| *\<User Representative>* | *\<Samir Singh>*     | *\<Photography Enthusiast>*  | *\<Expectation-2>* |
+| *\<Photography Expert>*  | *\<Lucas Rodriguez>* | *\<Snap & Shoot Magazine>*   | *\<Expectation-2>* |
 
 <div style="page-break-after: always;"></div>
 
