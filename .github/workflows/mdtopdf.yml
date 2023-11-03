@@ -1,0 +1,27 @@
+name: Generate PDF
+
+on:
+  push:
+    branches: [ "main" ]
+    
+  workflow_dispatch:
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Markdown to PDF
+        run: |-
+          npm install -g md-to-pdf
+          mkdir -p pdf
+          cd arc42
+          for f in *.md; do cat $f; echo; done | md-to-pdf > ../pdf/arc42.pdf
+      
+      - name: Upload PDF
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: arc42
+          path: pdf
