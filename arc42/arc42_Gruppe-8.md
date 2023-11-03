@@ -120,19 +120,6 @@ A table with quality goals and concrete scenarios, ordered by priorities
 
 </div>
 
-Explicit overview of stakeholders of the system, i.e. all person, roles
-or organizations that
-
--   should know the architecture
-
--   have to be convinced of the architecture
-
--   have to work with the architecture or with code
-
--   need the documentation of the architecture for their work
-
--   have to come up with decisions about the system or its development
-
 The following individuals are stakeholders of the system:
 
 -   Sarah Chen, Marketing Manager, Bold Branding Agency
