@@ -122,12 +122,18 @@ A table with quality goals and concrete scenarios, ordered by priorities
 
 The following individuals are stakeholders of the system:
 
--   Sarah Chen, Marketing Manager, Bold Branding Agency
--   Michael Nguyen, Project Manager, Digital Dreams Inc.
--   Ava Patel, Lead Developer, Pixel Perfect Solutions
--   Emily Wong, UX/UI Designer, Creative Co.
--   Samir Singh, User Representative, Photography Enthusiast
--   Lucas Rodriguez, Photography Expert, Snap & Shoot Magazine
+-   Sarah Chen,  
+    Marketing Manager, Bold Branding Agency
+-   Michael Nguyen,  
+    Project Manager, Digital Dreams Inc.
+-   Ava Patel,  
+    Lead Developer, Pixel Perfect Solutions
+-   Emily Wong,  
+    UX/UI Designer, Creative Co.
+-   Samir Singh,  
+    User Representative, Photography Enthusiast
+-   Lucas Rodriguez,  
+    Photography Expert, Snap & Shoot Magazine
 
 <div class="formalpara-title">
 
