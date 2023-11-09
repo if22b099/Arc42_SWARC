@@ -23,6 +23,7 @@ concepts. For documentation of your own system you use better the
 
 # Introduction and Goals
 
+<!---
 Describes the relevant requirements and the driving forces that software
 architects and development team must consider. These include
 
@@ -35,9 +36,15 @@ architects and development team must consider. These include
 -   quality goals for the architecture and
 
 -   relevant stakeholders and their expectations
+--->
+
+This document describes the architecture of PixelPulse, an image sharing app that uses
+third-party integration to allow users to edit images, as well as the ability to interact
+with content other users have posted and creating collections of images/posts.
 
 ## Requirements Overview
 
+<!--
 <div class="formalpara-title">
 
 **Contents**
@@ -73,9 +80,34 @@ document with potential redundancy w.r.t to requirements documents.
 
 See [Introduction and Goals](https://docs.arc42.org/section-1/) in the
 arc42 documentation.
+-->
+
+The following requirements for PixelPulse have been established in the form of
+use-case diagrams:
+
+**Use Case 1**
+![Use Case Diagram 1](images/use-case-diagrams/USE_CASE_1.png)
+The user wants to create a new account.
+
+**Use Case 2**
+![Use Case Diagram 2](images/use-case-diagrams/USE_CASE_2.png)
+The user logs in to their account.
+
+**Use Case 3**
+![Use Case Diagram 3](images/use-case-diagrams/USE_CASE_3.png)
+The user uploads and image to the app.
+
+**Use Case 4**
+![Use Case Diagram 4](images/use-case-diagrams/USE_CASE_4.png)
+The user interacts with an image uploaded by another user by commenting and/or liking.
+
+**Use Case 5**
+![Use Case Diagram 5](images/use-case-diagrams/USE_CASE_5.png)
+The user accesses Pixlr's editing tools.
 
 ## Quality Goals
 
+<!--
 <div class="formalpara-title">
 
 **Contents**
@@ -111,6 +143,13 @@ architect do not know how the quality of your work will be judged…
 </div>
 
 A table with quality goals and concrete scenarios, ordered by priorities
+-->
+
+|   | **Quality**                   | **Motivation**                                                        |
+|---|-------------------------------|-----------------------------------------------------------------------|
+| 1 | User Experience + Performance | Ensure the app is user-friendly and provides a seamless experience.   |
+| 2 | Security                      | Protect user data and ensure the app is secure from vulnerabilities.  |
+| 3 | Availability                  | Minimize downtime and ensure the app is available when users need it. |
 
 ## Stakeholders
 
