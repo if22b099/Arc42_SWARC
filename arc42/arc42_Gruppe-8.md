@@ -907,7 +907,7 @@ documentation.
 <div style="page-break-after: always;"></div>
 
 # Architecture Decisions
-
+<!--
 <div class="formalpara-title">
 
 **Contents**
@@ -941,6 +941,7 @@ your decisions.
 
 </div>
 
+
 Various options:
 
 -   ADR ([Documenting Architecture
@@ -953,6 +954,37 @@ Various options:
 
 See [Architecture Decisions](https://docs.arc42.org/section-9/) in the
 arc42 documentation. There you will find links and examples about ADR.
+-->
+
+## ADR 1: User Authentication
+
+**Context:** The system requires a robust and secure user authentication mechanism due to the sensitivity of user data. The application is expected to handle personal information, and compliance with security standards is crucial. 
+
+**Decision:** Selected 2FA as the authentication method.
+
+**Status:** Accepted
+
+**Consequences:** 2FA enhances security but may introduce some complexity in user experience.
+
+## ADR 2: Database Management
+
+**Context:** The system needs a reliable and scalable database management solution to handle structured data effectively. There is a mix of relational and non-relational data requirements, and the choice of a database system will impact performance and scalability.
+
+**Decision:** Chose Relational DB (PostgreSQL) for database management.
+
+**Status:** Accepted
+
+**Consequences:** Relational DB provides structured data storage but may have scalability challenges for certain use cases.
+
+## ADR 3: Choosing a Cloud Service for Hosting and Scalability
+
+**Context:** The system needs a scalable and reliable cloud service provider for hosting its components. Factors include performance, cost, availability, and the ability to integrate with other services.
+
+**Decision:** Selected AWS for hosting and scalability.
+
+**Status:** Accepted
+
+**Consequences:** AWS offers a robust cloud infrastructure but may involve additional costs compared to other cloud providers.
 
 <div style="page-break-after: always;"></div>
 
@@ -1072,7 +1104,7 @@ Tabular or free form text.
 <div style="page-break-after: always;"></div>
 
 # Risks and Technical Debts
-
+<!--
 <div class="formalpara-title">
 
 **Contents**
@@ -1104,6 +1136,7 @@ of the overall risk analysis and measurement planning.
 
 List of risks and/or technical debts, probably including suggested
 measures to minimize, mitigate or avoid risks or reduce technical debts.
+-->
 
 1. **User Authentication**
    - **Description:** Implementing user authentication in a microservice could lead to data breaches and security vulnerabilities if not properly designed and maintained. It may result in increased technical debt due to the need for ongoing security updates and monitoring.
