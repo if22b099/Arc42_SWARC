@@ -218,6 +218,14 @@ design and implementation decisions or decision about the development
 process. These constraints sometimes go beyond individual systems and
 are valid for whole organizations and companies.
 
+| **Constraints**                                                | **Background and/or Motivation**                                      |
+|----------------------------------------------------------------|-----------------------------------------------------------------------|
+| Team Constraints (Organizational)                              | Start-Up, small Team                                                  |
+| Budget Constraint (Organizational)                             | Start-Up, limited Budget                                              |
+| Third-Party Integration Constraint (Technical)                 | Dependent on Pixlr's API stability and availability                   |
+| Security and Privacy Constraint (Technical and Organizational) | Legal and regulatory requirements (consequences and damage)           |
+| User Adoption Constraint (Organizational)                      | App relies on user adoption (actively address user feedback)          |
+
 <div class="formalpara-title">
 
 **Motivation**
@@ -284,6 +292,9 @@ Various options:
 
 See [Context and Scope](https://docs.arc42.org/section-3/) in the arc42
 documentation.
+
+**Business Context**
+![Business Context](images/business-context-diagram/business-context.png)
 
 ## Business Context
 
