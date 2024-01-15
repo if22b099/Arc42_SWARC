@@ -380,47 +380,14 @@ and input/output.
 
 <div class="formalpara-title">
 
-**Contents**
-
-</div>
-
-A short summary and explanation of the fundamental decisions and
-solution strategies, that shape system architecture. It includes
-
--   technology decisions
-
--   decisions about the top-level decomposition of the system, e.g.
-    usage of an architectural pattern or design pattern
-
--   decisions on how to achieve key quality goals
-
--   relevant organizational decisions, e.g. selecting a development
-    process or delegating certain tasks to third parties.
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-These decisions form the cornerstones for your architecture. They are
-the foundation for many other detailed decisions or implementation
-rules.
-
-<div class="formalpara-title">
-
-**Form**
-
-</div>
-
-Keep the explanations of such key decisions short.
-
-Motivate what was decided and why it was decided that way, based upon
-problem statement, quality goals and key constraints. Refer to details
-in the following sections.
-
-See [Solution Strategy](https://docs.arc42.org/section-4/) in the arc42
-documentation.
+| Quality Goal                 | Scenario                                          | Solution Approach                              |
+| ---------------------------- | ------------------------------------------------- | ----------------------------------------------- |
+| User Experience and Performance | Ensuring fast image uploads and downloads.        | Optimize image processing and compression.     |
+| Security                     | Prevent unauthorized access to user data.         | Implement Two-Factor Authentication (2FA).    |
+| Availability                 | Minimize downtime and ensure continuous service.  | Implement scalable infrastructure. |
+| Pixlr Integration            | Enabling users to seamlessly edit images.         | Integrate Pixlr's API for image editing.       |
+| Relational Database Management | Managing structured data effectively.             | Choose PostgreSQL for relational database management. |
+| Cloud Hosting                | Ensuring scalability and reliable hosting.        | Select AWS as the cloud service provider.      |
 
 <div style="page-break-after: always;"></div>
 
@@ -1003,114 +970,141 @@ arc42 documentation. There you will find links and examples about ADR.
 
 <div class="formalpara-title">
 
-**Content**
-
-</div>
-
-This section contains all quality requirements as quality tree with
-scenarios. The most important ones have already been described in
-section 1.2. (quality goals)
-
-Here you can also capture quality requirements with lesser priority,
-which will not create high risks when they are not fully achieved.
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-Since quality requirements will have a lot of influence on architectural
-decisions you should know for every stakeholder what is really important
-to them, concrete and measurable.
-
-See [Quality Requirements](https://docs.arc42.org/section-10/) in the
-arc42 documentation.
-
 ## Quality Tree
 
+- **User Experience and Performance**
+  - **Usability:**
+    - The application must provide an easy-to-navigate user interface.
+      - *Scenario:* Users can upload an image within three clicks or taps.
+  - **Performance:**
+    - The system must ensure responsive image loading and editing.
+      - *Scenario:* Images must load within two seconds, even on slower network connections.
+  
+- **Security**
+  - **Authentication:**
+    - The application must securely authenticate users.
+      - *Scenario:* Two-Factor Authentication (2FA) is successfully enforced for user login.
+  - **Data Protection:**
+    - User data must be encrypted during transmission and storage.
+      - *Scenario:* Encrypted transmission of user-uploaded images to the server.
+  
+- **Availability**
+  - **Uptime:**
+    - The system must have high availability with minimal downtime.
+      - *Scenario:* The application should be available 99.9% of the time.
+  - **Fault Tolerance:**
+    - The system must handle and recover from unexpected failures.
+      - *Scenario:* Continued availability during server or service failures.
+
+- **Microservices Architecture**
+  - **Scalability:**
+    - The architecture must support horizontal scaling of microservices.
+      - *Scenario:* The system can handle a 50% increase in user uploads without performance degradation.
+  - **Isolation:**
+    - Microservices should be isolated to prevent failures.
+      - *Scenario:* Failure in one microservice should not impact the entire application.
+
+- **Pixlr Integration**
+  - **Reliability:**
+    - The integration with Pixlr's API must be reliable.
+      - *Scenario:* Users experience minimal delay when accessing Pixlr's editing tools.
+  - **Consistency:**
+    - Changes made using Pixlr's tools should be consistently applied to user images.
+      - *Scenario:* Edits made in Pixlr reflect accurately when saved within PixelPulse.
+
+- **Relational Database Management**
+  - **Data Integrity:**
+    - The database must ensure data integrity for user information and uploaded images.
+      - *Scenario:* No data corruption or loss during high-load periods.
+  - **Query Performance:**
+    - Database queries must be optimized for efficient retrieval of user data.
+      - *Scenario:* Retrieval of images from the database should take less than one second.
+
+- **Cloud Hosting**
+  - **Scalability:**
+    - Cloud infrastructure must scale dynamically based on demand.
+      - *Scenario:* The system can handle a 100% increase in concurrent users during peak times.
+  - **Data Redundancy:**
+    - Data must be redundantly stored to prevent data loss.
+      - *Scenario:* Automatic data recovery in the event of server failure.
+
+
 <div class="formalpara-title">
-
-**Content**
-
-</div>
-
-The quality tree (as defined in ATAM – Architecture Tradeoff Analysis
-Method) with quality/evaluation scenarios as leafs.
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-The tree structure with priorities provides an overview for a sometimes
-large number of quality requirements.
-
-<div class="formalpara-title">
-
-**Form**
-
-</div>
-
-The quality tree is a high-level overview of the quality goals and
-requirements:
-
--   tree-like refinement of the term "quality". Use "quality" or
-    "usefulness" as a root
-
--   a mind map with quality categories as main branches
-
-In any case the tree should include links to the scenarios of the
-following section.
 
 ## Quality Scenarios
 
 <div class="formalpara-title">
 
-**Contents**
+### User Experience and Performance
 
-</div>
+1. **Usability Scenario:**
+   - *Scenario:* A new user should be able upload an image within three clicks or taps.
+   - *Expected Outcome:* The image upload feature is easily accessible.
 
-Concretization of (sometimes vague or implicit) quality requirements
-using (quality) scenarios.
+2. **Performance Scenario:**
+   - *Scenario:* A user with a slower network connection attempts to view an image.
+   - *Expected Outcome:* The image loads within two seconds, providing a responsive user experience.
 
-These scenarios describe what should happen when a stimulus arrives at
-the system.
+### Security
 
-For architects, two kinds of scenarios are important:
+3. **Authentication Scenario:**
+   - *Scenario:* A user attempts to log in, and Two-Factor Authentication (2FA) is triggered.
+   - *Expected Outcome:* The user successfully completes the 2FA process, ensuring secure authentication.
 
--   Usage scenarios (also called application scenarios or use case
-    scenarios) describe the system’s runtime reaction to a certain
-    stimulus. This also includes scenarios that describe the system’s
-    efficiency or performance. Example: The system reacts to a user’s
-    request within one second.
+4. **Data Protection Scenario:**
+   - *Scenario:* A user uploads a personal image to the system.
+   - *Expected Outcome:* The uploaded image is encrypted during transmission and securely stored to protect user data.
 
--   Change scenarios describe a modification of the system or of its
-    immediate environment. Example: Additional functionality is
-    implemented or requirements for a quality attribute change.
+### Availability
 
-<div class="formalpara-title">
+5. **Uptime Scenario:**
+   - *Scenario:* Users attempt to access the application during a 24-hour period.
+   - *Expected Outcome:* The application is available 99.9% of the time, meeting high availability standards.
 
-**Motivation**
+6. **Fault Tolerance Scenario:**
+   - *Scenario:* A server hosting user images experiences a temporary failure.
+   - *Expected Outcome:* The system continues to function, and automatic recovery mechanisms restore data without impacting users.
 
-</div>
+### Microservices Architecture
 
-Scenarios make quality requirements concrete and allow to more easily
-measure or decide whether they are fulfilled.
+7. **Scalability Scenario:**
+   - *Scenario:* The user base increases by 50%, leading to a surge in image uploads.
+   - *Expected Outcome:* The system dynamically scales to handle increased load, maintaining performance and responsiveness.
 
-Especially when you want to assess your architecture using methods like
-ATAM you need to describe your quality goals (from section 1.2) more
-precisely down to a level of scenarios that can be discussed and
-evaluated.
+8. **Isolation Scenario:**
+   - *Scenario:* A failure occurs in one microservice handling image editing.
+   - *Expected Outcome:* The failure is isolated, and other microservices continue to function without disruption.
 
-<div class="formalpara-title">
+### Pixlr Integration
 
-**Form**
+9. **Reliability Scenario:**
+   - *Scenario:* Users access Pixlr's editing tools to enhance an image.
+   - *Expected Outcome:* Pixlr's tools are responsive with minimal delay, providing a reliable editing experience.
 
-</div>
+10. **Consistency Scenario:**
+    - *Scenario:* A user makes edits in Pixlr and saves them within PixelPulse.
+    - *Expected Outcome:* Edits made in Pixlr are consistently reflected in the user's PixelPulse account.
 
-Tabular or free form text.
+### Relational Database Management
+
+11. **Data Integrity Scenario:**
+    - *Scenario:* The system experiences high load during peak usage hours.
+    - *Expected Outcome:* The database maintains data integrity without corruption or loss.
+
+12. **Query Performance Scenario:**
+    - *Scenario:* A user retrieves a collection of images associated with their account.
+    - *Expected Outcome:* The query executes quickly, providing the user with their image collection in less than one second.
+
+### Cloud Hosting
+
+13. **Scalability Scenario:**
+    - *Scenario:* Concurrent users increase by 100% during a promotional event.
+    - *Expected Outcome:* Cloud infrastructure dynamically scales to accommodate the increased user load.
+
+14. **Data Redundancy Scenario:**
+    - *Scenario:* A server hosting user data fails, triggering automatic data recovery.
+    - *Expected Outcome:* Redundant data ensures automatic recovery, and users experience no data loss.
+
 
 <div style="page-break-after: always;"></div>
 
