@@ -324,7 +324,7 @@ environment of the system.
 </div>
 
 **Business Context**  
-![Business Context](images/business-context-diagram/BusinessContext.png)  
+![Business Context](images/system-context-diagram/BusinessContext.png)  
 
 | **System Name: PixelPulse Image Sharing App**                                                              |
 |------------------------------------------------------------------------------------------------------------|
@@ -382,7 +382,7 @@ or hardware designers decide these technical interfaces.
 </div>
 
 **Technical Context**  
-![Technical Context](images/business-context-diagram/TechnicalContext.png)  
+![Technical Context](images/system-context-diagram/TechnicalContext.png)  
 
 | Channel                               | Input/Output                        | Channels/Protocols                       |
 |---------------------------------------|-------------------------------------|------------------------------------------|
