@@ -326,8 +326,7 @@ environment of the system.
 **Business Context**  
 ![Business Context](images/system-context-diagram/BusinessContext.png)  
 
-| **System Name: PixelPulse Image Sharing App**                                                              |
-|------------------------------------------------------------------------------------------------------------|
+**System Name: PixelPulse Image Sharing App**  
 | Communication Partner          | Inputs                              | Outputs                             |
 |--------------------------------|-------------------------------------|-------------------------------------|
 | Users                          | User-generated data (photos, text)  | Personalized content, notifications |
@@ -335,7 +334,6 @@ environment of the system.
 | PixelPulse - Pixlr             | Selected images for editing         | Edited images, processing status    |
 | PixelPulse - External Services | Payment details for subscriptions   | Subscription confirmation, receipts |
 | PixelPulse - Social Media      | Shared images, user engagement data | Increased brand visibility          |
-|------------------------------------------------------------------------------------------------------------|
 
 
 <!--
