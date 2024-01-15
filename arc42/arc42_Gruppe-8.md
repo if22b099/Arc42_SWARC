@@ -252,6 +252,7 @@ arc42 documentation.
 
 <div style="page-break-after: always;"></div>
 
+<!-- System Scope and Context -->
 # System Scope and Context
 
 <div class="formalpara-title">
@@ -293,9 +294,7 @@ Various options:
 See [Context and Scope](https://docs.arc42.org/section-3/) in the arc42
 documentation.
 
-**Business Context**
-![Business Context](images/business-context-diagram/business-context.png)
-
+<!-- Business Context -->
 ## Business Context
 
 <div class="formalpara-title">
@@ -324,6 +323,22 @@ environment of the system.
 
 </div>
 
+**Business Context**  
+![Business Context](images/business-context-diagram/BusinessContext.jpg)  
+
+| **System Name: PixelPulse Image Sharing App**                                                              |
+|------------------------------------------------------------------------------------------------------------|
+| Communication Partner          | Inputs                              | Outputs                             |
+|--------------------------------|-------------------------------------|-------------------------------------|
+| Users                          | User-generated data (photos, text)  | Personalized content, notifications |
+| Admins                         | System configurations, user data    | System updates, analytics reports   |
+| PixelPulse - Pixlr             | Selected images for editing         | Edited images, processing status    |
+| PixelPulse - External Services | Payment details for subscriptions   | Subscription confirmation, receipts |
+| PixelPulse - Social Media      | Shared images, user engagement data | Increased brand visibility          |
+|------------------------------------------------------------------------------------------------------------|
+
+
+<!--
 All kinds of diagrams that show the system as a black box and specify
 the domain interfaces to communication partners.
 
@@ -334,7 +349,9 @@ the communication partner, the inputs, and the outputs.
 **\<Diagram or Table>**
 
 **\<optionally: Explanation of external domain interfaces>**
+-->
 
+<!-- Technical Context -->
 ## Technical Context
 
 <div class="formalpara-title">
@@ -360,10 +377,24 @@ or hardware designers decide these technical interfaces.
 
 <div class="formalpara-title">
 
-**Form**
+**Form**  
 
 </div>
 
+**Technical Context**  
+![Technical Context](images/business-context-diagram/TechnicalContext.jpg)  
+
+| Channel                               | Input/Output                        | Channels/Protocols                       |
+|---------------------------------------|-------------------------------------|------------------------------------------|
+| Users - PixelPulse Server             | User-generated data (photos, text)  | Direct app communication, HTTPS          |
+| Admins - PixelPulse Server            | System configurations, user data    | Direct app communication, HTTPS          |
+| PixelPulse Server - Pixlr             | Selected images for editing         | Integration via Pixlr API, RESTful APIs  |
+| Pixlr - PixelPulse Server             | Edited images, processing status    | Integration via Pixlr API, RESTful APIs  |
+| PixelPulse Server - External Services | Payment details for subscriptions   | Secure communication channels, HTTPS     |
+| PixelPulse Server - Social Media      | Shared images, user engagement data | APIs (e.g., Facebook API, Instagram API) |
+
+
+<!--
 E.g. UML deployment diagram describing channels to neighboring systems,
 together with a mapping table showing the relationships between channels
 and input/output.
@@ -373,6 +404,7 @@ and input/output.
 **\<optionally: Explanation of technical interfaces>**
 
 **\<Mapping Input/Output to Channels>**
+-->
 
 <div style="page-break-after: always;"></div>
 
