@@ -704,6 +704,7 @@ documentation.
 
 # Deployment View
 
+<!--
 <div class="formalpara-title">
 
 **Content**
@@ -758,7 +759,7 @@ deployment diagrams:
     to show nodes and channels of the infrastructure.
 
 See [Deployment View](https://docs.arc42.org/section-7/) in the arc42
-documentation.
+documentation.-->
 
 ## Infrastructure Level 1
 
