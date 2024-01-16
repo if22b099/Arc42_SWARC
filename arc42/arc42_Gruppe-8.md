@@ -762,7 +762,17 @@ documentation.
 
 ## Infrastructure Level 1
 
-Describe (usually in a combination of diagrams, tables, and text):
+![Deployment Topology](images/deployment-view-diagrams/deployment-level-1.png)
+
+| **Node**               | **Description**                                        |
+|------------------------|--------------------------------------------------------|
+| Client Device          | The device from which the user interacts with the app  |
+| Load Balancer          | Distributes incoming traffic across multiple instances |
+| Frontend Server        | Handles client requests                                |
+| Database               | Stores data                                            |
+| External Services      | Connection to third-party services                     |
+
+<!-- Describe (usually in a combination of diagrams, tables, and text):
 
 -   distribution of a system to multiple locations, environments,
     computers, processors, .., as well as physical connections between
@@ -787,30 +797,56 @@ Quality and/or Performance Features
 *\<explanation in text form>*
 
 Mapping of Building Blocks to Infrastructure  
-*\<description of the mapping>*
+*\<description of the mapping>* -->
 
 ## Infrastructure Level 2
 
-Here you can include the internal structure of (some) infrastructure
+<!--Here you can include the internal structure of (some) infrastructure
 elements from level 1.
 
-Please copy the structure from level 1 for each selected element.
+Please copy the structure from level 1 for each selected element.-->
 
-### *\<Infrastructure Element 1>*
+### *Frontend Server*
 
-*\<diagram + explanation>*
+![Frontend Server](images/deployment-view-diagrams/server-level-2.png)
 
-### *\<Infrastructure Element 2>*
+|                           | **Description**                                        |
+|---------------------------|--------------------------------------------------------|
+| Authentication Service    | Microservice that handles user authentication          |
+| Image Upload Service      | Microservice that handles user uploaded images         |
+| Pixlr Integration Service | Microservice that connects to the Pixlr API            |
+| Image Processing Service  | Microservice that processes images for storage         |
+| Notification Service      | Microservice that handles user notifications           |
+| Database Service          | Microservice that handles the database connection      |
+| Search Service            | Microservice that handles search requests              |
 
-*\<diagram + explanation>*
+### *Database*
 
-…
+![Database](images/deployment-view-diagrams/database-level-2.png)
 
-### *\<Infrastructure Element n>*
+|                                   | **Description**                                                       |
+|-----------------------------------|-----------------------------------------------------------------------|
+| Database Management Service       | Microservice that handles management and coordination of the database |
+| Data Storage Service              | Microservice that stores and retrieves the actual data                |
+| Caching Service                   | Microservice that implements caching to improve data access speeds    |
+| Transaction Service               | Microservice that ensures data consistency and integrity              |
+| Security + Access Control Service | Microservice that enforces security measures                          |
+| Data Encryption Service           | Microservice that implements ecnryption mechanisms on sensitive data  |
 
-*\<diagram + explanation>*
+### *External Services*
 
-<div style="page-break-after: always;"></div>
+![External Services](images/deployment-view-diagrams/external-services-level-2.png)
+
+|                               | **Description**                                                                                           |
+|-------------------------------|-----------------------------------------------------------------------------------------------------------|
+| Pixlr Integration             | Third-party Pixlr integration                                                                             |
+| Email Service                 | Microservice that sends account-related notifications via third-party integration                         |
+| SMS Service                   | Microservice that handles 2FA and account verification via third-party integration                        |
+| Analytics + Tracking Service  | Microservice that handles user analytics tracking via third-party integration                             |
+| Push Notification Service     | Microservice that sends real-time notifications to user devices via third-party integration               |
+| Social Media Service          | Microservice that allows for cross-plattform sharing and registration via external social media platforms |
+| File Storage + Backup Service | Microservice that handles user data backups via third-party integration                                   |
+| Compliance + Security Service | Microservice that implements compliance checks and vulnerability assessments via third-party integration  |
 
 # Cross-cutting Concepts
 
