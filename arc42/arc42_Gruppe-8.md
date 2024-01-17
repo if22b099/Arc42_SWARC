@@ -784,6 +784,7 @@ Please copy the structure from level 1 for each selected element.-->
 
 <div class="formalpara-title">
 
+<!--
 **Content**
 
 </div>
@@ -864,7 +865,7 @@ specific topic on this list.
 concepts](images/08-Crosscutting-Concepts-Structure-EN.png)
 
 See [Concepts](https://docs.arc42.org/section-8/) in the arc42
-documentation.
+documentation. -->
 
 ## *\<Concept 1>*
 
