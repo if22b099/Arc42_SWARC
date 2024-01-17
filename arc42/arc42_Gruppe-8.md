@@ -867,19 +867,19 @@ concepts](images/08-Crosscutting-Concepts-Structure-EN.png)
 See [Concepts](https://docs.arc42.org/section-8/) in the arc42
 documentation. -->
 
-## *\<Concept 1>*
+## *Security*
+- **Authentication and Authorization:** User access management is needed in multiple modules, therefore a centralized approach is crucial.
+- **Data Protection:** By centralizing the security mechanisms, there is a reduced possibility of security vulenrabilities.
 
-*\<explanation>*
+## *Logging and Monitoring*
+- **Logging:** Centrally stored logs can be used to identify issues or for auditing purposes.
+- **Monitoring:** Monitoring can be used in several places to monitor response times, resource usage and system health and is essential for identifying and addressing performance issues.
 
-## *\<Concept 2>*
+## *Error Handling*
+- **Centralized Error Handling:** A centralized error handling system helps maintain a standardized approach to dealing with errors.
 
-*\<explanation>*
-
-…
-
-## *\<Concept n>*
-
-*\<explanation>*
+## *Caching*
+- **Information Caching:** Storing frequently accessed information in a cache can improve performance.
 
 <div style="page-break-after: always;"></div>
 
