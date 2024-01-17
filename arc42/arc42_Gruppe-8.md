@@ -696,11 +696,11 @@ documentation.-->
 
 ![Deployment Topology](images/deployment-view-diagrams/deployment-level-1.png)
 
-| **Node**               | **Description**                                        |
-|------------------------|--------------------------------------------------------|
-| Client Device          | The device from which the user interacts with the app  |
-| Load Balancer          | Distributes incoming traffic across multiple instances |
-| Frontend Server        | Handles client requests                                |
+| **Node**                       | **Description**                                        |
+|--------------------------------|--------------------------------------------------------|
+| User Device                    | The device from which the user interacts with the app  |
+| Frontend                       | User Interface                                         |
+| Authentication + Authorization | Handles client authentication                          |
 | Database               | Stores data                                            |
 | External Services      | Connection to third-party services                     |
 
@@ -877,9 +877,6 @@ documentation. -->
 
 ## *Error Handling*
 - **Centralized Error Handling:** A centralized error handling system helps maintain a standardized approach to dealing with errors.
-
-## *Caching*
-- **Information Caching:** Storing frequently accessed information in a cache can improve performance.
 
 <div style="page-break-after: always;"></div>
 
