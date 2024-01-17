@@ -1128,8 +1128,8 @@ measures to minimize, mitigate or avoid risks or reduce technical debts.
    - **Mitigation Measures:** Regular security audits, implementation of best practices for authentication, continuous monitoring of security vulnerabilities.
 
 2. **Scalability Challenges**
-   - **Description:** Building a microservices architecture that prioritizes user experience can introduce scalability challenges.
-   - **Mitigation Measures:** Continuous performance testing, adopting scalable design patterns, implementing dynamic scaling solutions.
+   - **Description:** Developing a monolithic architecture while prioritizing user experience can introduce scalability challenges.
+   - **Mitigation Measures:** Continuous performance testing, adopting scalable design patterns within the monolith, implementing dynamic scaling solutions.
 
 3. **Data Consistency**
    - **Description:** Maintaining data consistency and synchronization across microservices can be a significant technical debt.
