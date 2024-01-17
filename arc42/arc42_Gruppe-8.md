@@ -346,7 +346,6 @@ and input/output.
 | ---------------------------- | ------------------------------------------------- | ----------------------------------------------- |
 | User Experience and Performance | Ensuring fast image uploads and downloads.        | Optimize image processing and compression.     |
 | Security                     | Prevent unauthorized access to user data.         | Implement Two-Factor Authentication (2FA).    |
-| Availability                 | Minimize downtime and ensure continuous service.  | Implement scalable infrastructure. |
 | Pixlr Integration            | Enabling users to seamlessly edit images.         | Integrate Pixlr's API for image editing.       |
 | Relational Database Management | Managing structured data effectively.             | Choose PostgreSQL for relational database management. |
 | Cloud Hosting                | Ensuring scalability and reliable hosting.        | Select AWS as the cloud service provider.      |
@@ -995,14 +994,6 @@ arc42 documentation. There you will find links and examples about ADR.
     - The system must handle and recover from unexpected failures.
       - *Scenario:* Continued availability during server or service failures.
 
-- **Microservices Architecture**
-  - **Scalability:**
-    - The architecture must support horizontal scaling of microservices.
-      - *Scenario:* The system can handle a 50% increase in user uploads without performance degradation.
-  - **Isolation:**
-    - Microservices should be isolated to prevent failures.
-      - *Scenario:* Failure in one microservice should not impact the entire application.
-
 - **Pixlr Integration**
   - **Reliability:**
     - The integration with Pixlr's API must be reliable.
@@ -1064,43 +1055,33 @@ arc42 documentation. There you will find links and examples about ADR.
    - *Scenario:* A server hosting user images experiences a temporary failure.
    - *Expected Outcome:* The system continues to function, and automatic recovery mechanisms restore data without impacting users.
 
-### Microservices Architecture
-
-7. **Scalability Scenario:**
-   - *Scenario:* The user base increases by 50%, leading to a surge in image uploads.
-   - *Expected Outcome:* The system dynamically scales to handle increased load, maintaining performance and responsiveness.
-
-8. **Isolation Scenario:**
-   - *Scenario:* A failure occurs in one microservice handling image editing.
-   - *Expected Outcome:* The failure is isolated, and other microservices continue to function without disruption.
-
 ### Pixlr Integration
 
-9. **Reliability Scenario:**
+7. **Reliability Scenario:**
    - *Scenario:* Users access Pixlr's editing tools to enhance an image.
    - *Expected Outcome:* Pixlr's tools are responsive with minimal delay, providing a reliable editing experience.
 
-10. **Consistency Scenario:**
+8. **Consistency Scenario:**
     - *Scenario:* A user makes edits in Pixlr and saves them within PixelPulse.
     - *Expected Outcome:* Edits made in Pixlr are consistently reflected in the user's PixelPulse account.
 
 ### Relational Database Management
 
-11. **Data Integrity Scenario:**
+9. **Data Integrity Scenario:**
     - *Scenario:* The system experiences high load during peak usage hours.
     - *Expected Outcome:* The database maintains data integrity without corruption or loss.
 
-12. **Query Performance Scenario:**
+10. **Query Performance Scenario:**
     - *Scenario:* A user retrieves a collection of images associated with their account.
     - *Expected Outcome:* The query executes quickly, providing the user with their image collection in less than one second.
 
 ### Cloud Hosting
 
-13. **Scalability Scenario:**
+11. **Scalability Scenario:**
     - *Scenario:* Concurrent users increase by 100% during a promotional event.
     - *Expected Outcome:* Cloud infrastructure dynamically scales to accommodate the increased user load.
 
-14. **Data Redundancy Scenario:**
+12. **Data Redundancy Scenario:**
     - *Scenario:* A server hosting user data fails, triggering automatic data recovery.
     - *Expected Outcome:* Redundant data ensures automatic recovery, and users experience no data loss.
 
