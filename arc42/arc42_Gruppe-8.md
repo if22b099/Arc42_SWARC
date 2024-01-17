@@ -1,24 +1,4 @@
 # 
-
-**About arc42**
-
-arc42, the template for documentation of software and system
-architecture.
-
-Template Version 8.2 EN. (based upon AsciiDoc version), January 2023
-
-Created, maintained and © by Dr. Peter Hruschka, Dr. Gernot Starke and
-contributors. See <https://arc42.org>.
-
-<div class="note">
-
-This version of the template contains some help and explanations. It is
-used for familiarization with arc42 and the understanding of the
-concepts. For documentation of your own system you use better the
-*plain* version.
-
-</div>
-
 <div style="page-break-after: always;"></div>
 
 # Introduction and Goals
@@ -178,21 +158,10 @@ The following individuals are stakeholders of the system:
 
 **Motivation**
 
-</div>
-
-You should know all parties involved in development of the system or
-affected by the system. Otherwise, you may get nasty surprises later in
-the development process. These stakeholders determine the extent and the
-level of detail of your work and its results.
-
-<div class="formalpara-title">
-
 **Form**
 
 </div>
 
-Table with role names, person names, and their expectations with respect
-to the architecture and its documentation.
 
 | Role                     | Name                 | Contact                      | Expectations       |
 |--------------------------|----------------------|------------------------------|--------------------|
@@ -256,43 +225,6 @@ arc42 documentation.
 # System Scope and Context
 
 <div class="formalpara-title">
-
-**Contents**
-
-</div>
-
-System scope and context - as the name suggests - delimits your system
-(i.e. your scope) from all its communication partners (neighboring
-systems and users, i.e. the context of your system). It thereby
-specifies the external interfaces.
-
-If necessary, differentiate the business context (domain specific inputs
-and outputs) from the technical context (channels, protocols, hardware).
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-The domain interfaces and technical interfaces to communication partners
-are among your system’s most critical aspects. Make sure that you
-completely understand them.
-
-<div class="formalpara-title">
-
-**Form**
-
-</div>
-
-Various options:
-
--   Context diagrams
-
--   Lists of communication partners and their interfaces.
-
-See [Context and Scope](https://docs.arc42.org/section-3/) in the arc42
-documentation.
 
 <!-- Business Context -->
 ## Business Context
