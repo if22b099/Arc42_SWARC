@@ -1124,8 +1124,8 @@ measures to minimize, mitigate or avoid risks or reduce technical debts.
 -->
 
 1. **User Authentication**
-   - **Description:** Implementing user authentication in a microservice could lead to data breaches and security vulnerabilities if not properly designed and maintained. It may result in increased technical debt due to the need for ongoing security updates and monitoring.
-   - **Mitigation Measures:** Regular security audits, implementation of best practices for authentication, continuous monitoring of security vulnerabilities.
+   - **Description:** Integrating user authentication within a monolithic system could pose risks such as data breaches and security vulnerabilities if not appropriately designed and maintained. This may result in heightened technical debt, necessitating continuous security updates and monitoring.
+   - **Mitigation Measures:** Conducting regular security audits, implementing best practices for authentication, and continuously monitoring security vulnerabilities are crucial measures to mitigate the associated risks in a monolithic architecture.
 
 2. **Scalability Challenges**
    - **Description:** Developing a monolithic architecture while prioritizing user experience can introduce scalability challenges.
