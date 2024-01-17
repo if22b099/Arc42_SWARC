@@ -635,63 +635,6 @@ documentation.
 
 # Deployment View
 
-<!--
-<div class="formalpara-title">
-
-**Content**
-
-</div>
-
-The deployment view describes:
-
-1.  technical infrastructure used to execute your system, with
-    infrastructure elements like geographical locations, environments,
-    computers, processors, channels and net topologies as well as other
-    infrastructure elements and
-
-2.  mapping of (software) building blocks to that infrastructure
-    elements.
-
-Often systems are executed in different environments, e.g. development
-environment, test environment, production environment. In such cases you
-should document all relevant environments.
-
-Especially document a deployment view if your software is executed as
-distributed system with more than one computer, processor, server or
-container or when you design and construct your own hardware processors
-and chips.
-
-From a software perspective it is sufficient to capture only those
-elements of an infrastructure that are needed to show a deployment of
-your building blocks. Hardware architects can go beyond that and
-describe an infrastructure to any level of detail they need to capture.
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-Software does not run without hardware. This underlying infrastructure
-can and will influence a system and/or some cross-cutting concepts.
-Therefore, there is a need to know the infrastructure.
-
-Maybe a highest level deployment diagram is already contained in section
-3.2. as technical context with your own infrastructure as ONE black box.
-In this section one can zoom into this black box using additional
-deployment diagrams:
-
--   UML offers deployment diagrams to express that view. Use it,
-    probably with nested diagrams, when your infrastructure is more
-    complex.
-
--   When your (hardware) stakeholders prefer other kinds of diagrams
-    rather than a deployment diagram, let them use any kind that is able
-    to show nodes and channels of the infrastructure.
-
-See [Deployment View](https://docs.arc42.org/section-7/) in the arc42
-documentation.-->
-
 ## Infrastructure Level 1
 
 ![Deployment Topology](images/deployment-view-diagrams/deployment-level-1.png)
@@ -701,171 +644,52 @@ documentation.-->
 | User Device                    | The device from which the user interacts with the app  |
 | Frontend                       | User Interface                                         |
 | Authentication + Authorization | Handles client authentication                          |
-| Database               | Stores data                                            |
-| External Services      | Connection to third-party services                     |
-
-<!-- Describe (usually in a combination of diagrams, tables, and text):
-
--   distribution of a system to multiple locations, environments,
-    computers, processors, .., as well as physical connections between
-    them
-
--   important justifications or motivations for this deployment
-    structure
-
--   quality and/or performance features of this infrastructure
-
--   mapping of software artifacts to elements of this infrastructure
-
-For multiple environments or alternative deployments please copy and
-adapt this section of arc42 for all relevant environments.
-
-***\<Overview Diagram>***
-
-Motivation  
-*\<explanation in text form>*
-
-Quality and/or Performance Features  
-*\<explanation in text form>*
-
-Mapping of Building Blocks to Infrastructure  
-*\<description of the mapping>* -->
+| Backend                        | Contains app logic                                     |
+| Database                       | Contains all data                                      |
+| Pixlr API                      | Integration of the Pixlr API                           |
+| Image Processing               | Handles Image Processing operations                    |
+| Image Storage                  | Contains all user published images                     |
+| Monitoring + Logging           | Monitors and logs system status                        |
+| Error Handling                 | Centralized Error Handling System                      |
+| Notification System            | Handles user notifications                             |
+| Search + Discovery             | Users can search for specific users                    |
+| Payment Gateway Integration    | Handles transactions                                   |
 
 ## Infrastructure Level 2
 
-<!--Here you can include the internal structure of (some) infrastructure
-elements from level 1.
+### *Frontend*
 
-Please copy the structure from level 1 for each selected element.-->
+![Frontend](images/deployment-view-diagrams/frontend-level-2.png)
 
-### *Frontend Server*
+|                           | **Description**                                         |
+|---------------------------|---------------------------------------------------------|
+| User Interface            | Interface with which the user interacts                 |
+| App Framework             | Mobile App development framework                        |
+| App Container             | Runtime Environment of the app                          |
+| UI Components             | Components responsible for the user interface           |
+| Views/Templates           | define the structures of individual screens             |
+| Styling                   | Styling logic responsible for the visual appearance     |
+| Client-Side Scripts       | Handle client side logic and communication with backend |
+| Assets                    | Media assets used in the app's UI                       |
+| App Configuration Files   | Config files specific to the app                        |
 
-![Frontend Server](images/deployment-view-diagrams/server-level-2.png)
+### *Backend/Server*
 
-|                           | **Description**                                        |
-|---------------------------|--------------------------------------------------------|
-| Authentication Service    | Microservice that handles user authentication          |
-| Image Upload Service      | Microservice that handles user uploaded images         |
-| Pixlr Integration Service | Microservice that connects to the Pixlr API            |
-| Image Processing Service  | Microservice that processes images for storage         |
-| Notification Service      | Microservice that handles user notifications           |
-| Database Service          | Microservice that handles the database connection      |
-| Search Service            | Microservice that handles search requests              |
+![Backend](images/deployment-view-diagrams/backend-level-2.png)
 
-### *Database*
-
-![Database](images/deployment-view-diagrams/database-level-2.png)
-
-|                                   | **Description**                                                       |
-|-----------------------------------|-----------------------------------------------------------------------|
-| Database Management Service       | Microservice that handles management and coordination of the database |
-| Data Storage Service              | Microservice that stores and retrieves the actual data                |
-| Caching Service                   | Microservice that implements caching to improve data access speeds    |
-| Transaction Service               | Microservice that ensures data consistency and integrity              |
-| Security + Access Control Service | Microservice that enforces security measures                          |
-| Data Encryption Service           | Microservice that implements ecnryption mechanisms on sensitive data  |
-
-### *External Services*
-
-![External Services](images/deployment-view-diagrams/external-services-level-2.png)
-
-|                               | **Description**                                                                                           |
-|-------------------------------|-----------------------------------------------------------------------------------------------------------|
-| Pixlr Integration             | Third-party Pixlr integration                                                                             |
-| Email Service                 | Microservice that sends account-related notifications via third-party integration                         |
-| SMS Service                   | Microservice that handles 2FA and account verification via third-party integration                        |
-| Analytics + Tracking Service  | Microservice that handles user analytics tracking via third-party integration                             |
-| Push Notification Service     | Microservice that sends real-time notifications to user devices via third-party integration               |
-| Social Media Service          | Microservice that allows for cross-plattform sharing and registration via external social media platforms |
-| File Storage + Backup Service | Microservice that handles user data backups via third-party integration                                   |
-| Compliance + Security Service | Microservice that implements compliance checks and vulnerability assessments via third-party integration  |
+|                             | **Description**                                            |
+|-----------------------------|------------------------------------------------------------|
+| Web Server                  | Deploys backend components                                 |
+| Application Server          | Contains backend application logic                         |
+| APIs                        | Exposed endpoints for communication with external services |
+| Pixlr Integration Logic     | Handles communication with Pixlr API                       |
+| Database Interaction        | Database connection                                        |
+| Background Jobs/Processing  | Handle background tasks that can be queued                 |
+| Backend Configuration Files | Config files specific to the backend                       |
 
 # Cross-cutting Concepts
 
 <div class="formalpara-title">
-
-<!--
-**Content**
-
-</div>
-
-This section describes overall, principal regulations and solution ideas
-that are relevant in multiple parts (= cross-cutting) of your system.
-Such concepts are often related to multiple building blocks. They can
-include many different topics, such as
-
--   models, especially domain models
-
--   architecture or design patterns
-
--   rules for using specific technology
-
--   principal, often technical decisions of an overarching (=
-    cross-cutting) nature
-
--   implementation rules
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-Concepts form the basis for *conceptual integrity* (consistency,
-homogeneity) of the architecture. Thus, they are an important
-contribution to achieve inner qualities of your system.
-
-Some of these concepts cannot be assigned to individual building blocks,
-e.g. security or safety.
-
-<div class="formalpara-title">
-
-**Form**
-
-</div>
-
-The form can be varied:
-
--   concept papers with any kind of structure
-
--   cross-cutting model excerpts or scenarios using notations of the
-    architecture views
-
--   sample implementations, especially for technical concepts
-
--   reference to typical usage of standard frameworks (e.g. using
-    Hibernate for object/relational mapping)
-
-<div class="formalpara-title">
-
-**Structure**
-
-</div>
-
-A potential (but not mandatory) structure for this section could be:
-
--   Domain concepts
-
--   User Experience concepts (UX)
-
--   Safety and security concepts
-
--   Architecture and design patterns
-
--   "Under-the-hood"
-
--   development concepts
-
--   operational concepts
-
-Note: it might be difficult to assign individual concepts to one
-specific topic on this list.
-
-![Possible topics for crosscutting
-concepts](images/08-Crosscutting-Concepts-Structure-EN.png)
-
-See [Concepts](https://docs.arc42.org/section-8/) in the arc42
-documentation. -->
 
 ## *Security*
 - **Authentication and Authorization:** User access management is needed in multiple modules, therefore a centralized approach is crucial.
@@ -877,6 +701,8 @@ documentation. -->
 
 ## *Error Handling*
 - **Centralized Error Handling:** A centralized error handling system helps maintain a standardized approach to dealing with errors.
+
+<br>
 
 <div style="page-break-after: always;"></div>
 
