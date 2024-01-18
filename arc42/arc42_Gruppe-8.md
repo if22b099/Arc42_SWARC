@@ -44,22 +44,9 @@ The user accesses Pixlr's editing tools.
 
 The following individuals are stakeholders of the system:
 
--   Sarah Chen,  
-    Marketing Manager, Bold Branding Agency
--   Michael Nguyen,  
-    Project Manager, Digital Dreams Inc.
--   Ava Patel,  
-    Lead Developer, Pixel Perfect Solutions
--   Emily Wong,  
-    UX/UI Designer, Creative Co.
--   Samir Singh,  
-    User Representative, Photography Enthusiast
--   Lucas Rodriguez,  
-    Photography Expert, Snap & Shoot Magazine
-
 | Role                 | Name              | Contact                   | Expectations                                                   |
 |----------------------|-------------------|---------------------------|----------------------------------------------------------------|
-| Marketing Manager>   | Sarah Chen        | Bold Branding Agency      | Brand Alignment, User-Friendly, Marketing Effectiveness.       |
+| Marketing Manager    | Sarah Chen        | Bold Branding Agency      | Brand Alignment, User-Friendly, Marketing Effectiveness.       |
 | Project Manager      | Michael Nguyen    | Digital Dreams Inc.       | Timely Delivery, Budget Adherence, Clear Communication.        |
 | Lead Developer       | Ava Patel         | Pixel Perfect Solutions   | Clear Requirements, Coding Standards, Resource Availability.   |
 | UX/UI Designer       | Emily Wong        | Creative Co.              | Detailed Design, User Collaboration, Intuitive Interface.      |
