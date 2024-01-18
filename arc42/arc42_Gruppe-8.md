@@ -1,6 +1,3 @@
-# 
-<div style="page-break-after: always;"></div>
-
 # Introduction and Goals
 
 This document describes the architecture of PixelPulse, an image sharing app that uses
