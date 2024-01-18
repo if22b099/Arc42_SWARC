@@ -30,31 +30,46 @@ use-case diagrams:
 **Use Case 1**  
 The user wants to create a new account.  
 <div style="width: 50%;">
-    ![Use Case Diagram 1](images/use-case-diagrams/USE_CASE_1.png)  
+    <img src="images/use-case-diagrams/USE_CASE_1.png" alt="Use Case Diagram 1"/>
+    <!--
+    ![Use Case Diagram 1](images/use-case-diagrams/USE_CASE_1.png)
+    -->
 </div>
 
 **Use Case 2**  
 The user logs in to their account.  
 <div style="width: 50%;">
+    <img src="images/use-case-diagrams/USE_CASE_2.png" alt="Use Case Diagram 1"/>
+    <!--
     ![Use Case Diagram 2](images/use-case-diagrams/USE_CASE_2.png)  
+    -->
 </div>
 
 **Use Case 3**  
 The user uploads and image to the app.  
 <div style="width: 50%;">
+    <img src="images/use-case-diagrams/USE_CASE_3.png" alt="Use Case Diagram 1"/>
+    <!--
     ![Use Case Diagram 3](images/use-case-diagrams/USE_CASE_3.png)  
+    -->
 </div>
 
 **Use Case 4**  
 The user interacts with an image uploaded by another user by commenting and/or liking.  
 <div style="width: 50%;">
+    <img src="images/use-case-diagrams/USE_CASE_4.png" alt="Use Case Diagram 1"/>
+    <!--
     ![Use Case Diagram 4](images/use-case-diagrams/USE_CASE_4.png)  
+    -->
 </div>
 
 **Use Case 5**  
 The user accesses Pixlr's editing tools.  
 <div style="width: 50%;">
+    <img src="images/use-case-diagrams/USE_CASE_5.png" alt="Use Case Diagram 1"/>
+    <!--
     ![Use Case Diagram 5](images/use-case-diagrams/USE_CASE_5.png)  
+    -->
 </div>
 
 ## Quality Goals
@@ -117,7 +132,6 @@ The following individuals are stakeholders of the system:
 **Business Context**  
 ![Business Context](images/system-context-diagram/BusinessContext.png)  
 
-**System Name: PixelPulse Image Sharing App**  
 | Communication Partner          | Inputs                              | Outputs                             |
 |--------------------------------|-------------------------------------|-------------------------------------|
 | Users                          | User-generated data (photos, text)  | Personalized content, notifications |
