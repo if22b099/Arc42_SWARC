@@ -353,209 +353,424 @@ and input/output.
 <div style="page-break-after: always;"></div>
 
 # Building Block View
-
-<div class="formalpara-title">
-
-**Content**
-
-</div>
-
+## Level 1 - Whitebox Overall System
 The building block view shows the static decomposition of the system
 into building blocks (modules, components, subsystems, classes,
 interfaces, packages, libraries, frameworks, layers, partitions, tiers,
 functions, macros, operations, data structures, …) as well as their
 dependencies (relationships, associations, …)
 
-This view is mandatory for every architecture documentation. In analogy
-to a house this is the *floor plan*.
-
-<div class="formalpara-title">
+**Overview Diagram**
+![pixelpulse building block overview diagram](images/building-block-view/pixelpulse.png)
 
 **Motivation**
+The PixelPulse system is designed to provide a user-friendly and
+efficient way for users to edit and share their images. The system is
+composed of a number of interconnected building blocks, each of which
+plays a specific role in the overall architecture.
 
-</div>
+### Contained Building Blocks
 
-Maintain an overview of your source code by making its structure
-understandable through abstraction.
+| Name                                | Responsibility                                                     |
+|-------------------------------------|--------------------------------------------------------------------|
+| PixelPulse App                      | Provides the front-end functionality.                              |
+| Pixlr                               | Provides image editing tools.                                      |
+| Patch API of Publishing Platforms   | Allows the PixelPulse App to receive updates.                      |
+| Database Server                     | Authenticates Users and stores data related to images and users.   |
+| Admin                               | Personnel for administration system.                               |
+| Maintenance Developer               | Personnel for quality assurance and content updates.               |
 
-This allows you to communicate with your stakeholder on an abstract
-level without disclosing implementation details.
+### Black Box Descriptions
 
-<div class="formalpara-title">
+#### PixelPulse App
 
-**Form**
+* Purpose/Responsibility: The PixelPulse App provides the core functionality of the mobile application, including image editing, sharing, and storage.
 
-</div>
+* Interfaces:
+    * Interacts with Pixlr to provide editing tools.
+    * Uploads edited images to database server.
+    * Retrieves and displays images from the Database.
+    * Communicates with the Server to manage user accounts and permissions.
 
-The building block view is a hierarchical collection of black boxes and
-white boxes (see figure below) and their descriptions.
+* Quality/Performance Characteristics:
+    * Easy to use and navigate.
+    * Supports a variety of image editing tools.
+    * Efficiently manages data storage and retrieval.
+    * Securely protects user data.
 
-![Hierarchy of building blocks](images/05_building_blocks-EN.png)
+* Directory/File Location:
+    /PixelPulseApp
 
-**Level 1** is the white box description of the overall system together
-with black box descriptions of all contained building blocks.
+* Fulfilled Requirements:
+    * R-1: The app should allow users to edit and share images.
+    * R-2: The app should be easy to use and navigate.
+    * R-3: The app should provide a variety of image editing tools.
+    * R-4: The app should seamlessly communicate with the database server.
 
-**Level 2** zooms into some building blocks of level 1. Thus it contains
-the white box description of selected building blocks of level 1,
-together with black box descriptions of their internal building blocks.
+* Open Issues/Problems/Risks:
+    * Potential compatibility issues with different mobile devices.
+    * Security vulnerabilities in the data storage and retrieval process.
+    * Performance, reliability and availability can be affected because system will only be able to scale vertically due to its monolithic structure.
 
-**Level 3** zooms into selected building blocks of level 2, and so on.
+#### Pixlr
 
-See [Building Block View](https://docs.arc42.org/section-5/) in the
-arc42 documentation.
+* Purpose/Responsibility: Pixlr provides image editing tools that can be used to edit images before they are uploaded to the database server.
 
-## Whitebox Overall System
+* Interfaces:
+    * Receives images from the PixelPulse App.
+    * Applies image editing effects to images.
+    * Sends edited images back to the PixelPulse App.
 
-Here you describe the decomposition of the overall system using the
-following white box template. It contains
+* Quality/Performance Characteristics:
+    * Powerful image editing capabilities.
+    * Supports a wide range of image editing effects.
+    * Efficiently processes images.
+    * Provides a user-friendly interface.
 
--   an overview diagram
+* Directory/File Location:
+    /PixelPulseApp/Pixlr
 
--   a motivation for the decomposition
+* Fulfilled Requirements:
+    * R-1: The app should provide a variety of image editing tools.
+    * R-2: The app should be powerful and efficient.
+    * R-3: The app should provide a user-friendly interface.
 
--   black box descriptions of the contained building blocks. For these
-    we offer you alternatives:
+* Open Issues/Problems/Risks:
+    * Potential compatibility issues with different image formats.
+    * Performance issues when editing large images.
 
-    -   use *one* table for a short and pragmatic overview of all
-        contained building blocks and their interfaces
+#### Patch API of Publishing Platforms
 
-    -   use a list of black box descriptions of the building blocks
-        according to the black box template (see below). Depending on
-        your choice of tool this list could be sub-chapters (in text
-        files), sub-pages (in a Wiki) or nested elements (in a modeling
-        tool).
+* Purpose/Responsibility: The Patch API allows the PixelPulse App to update itself or be updated through the Publishing Platforms it is originally downloaded from. In case of a critical update (e.g. fix for a security breach), users can safely update the app outside of runtime.
 
--   (optional:) important interfaces, that are not explained in the
-    black box templates of a building block, but are very important for
-    understanding the white box. Since there are so many ways to specify
-    interfaces why do not provide a specific template for them. In the
-    worst case you have to specify and describe syntax, semantics,
-    protocols, error handling, restrictions, versions, qualities,
-    necessary compatibilities and many things more. In the best case you
-    will get away with examples or simple signatures.
+* Interfaces:
+    * Receives updates from Maintenance Developers.
+    * Notifies the App to gatekeep users for the installation of a critical update.
 
-***\<Overview Diagram>***
+### Important Interfaces
 
-Motivation  
-*\<text explanation>*
+* **PixelPulse App to Pixlr:** This interface allows the PixelPulse App to send images to Pixlr for editing. It is a critical interface because it is responsible for the core functionality of the system.
+* **PixelPulse App to Patch API of Publishing Platforms:** This interface allows the PixelPulse App to receive updates from the Patch API. It ensures that the PixelPulse App is always up-to-date with the latest security patches and features.
+* **Database Server to PixelPulse App and Pixlr:** This interface allows the Database Server to store and retrieve data related to images and users. It provides a central repository for all user data.
+* **Admin to Server:** This interface allows administrators to manage and maintain the system. It ensures that the system is always functioning properly.
+* **Maintenance Developer to Patch API of Publishing Platforms:** This interface allows maintenance developers to send updates to the Patch API. It allows the system to be updated without requiring users to manually download new versions of the app.
+
+## Level 2 - White Box PixelPulse App
 
-Contained Building Blocks  
-*\<Description of contained building block (black boxes)>*
+The PixelPulse App is a user-friendly and efficient mobile application that allows users to edit and share their images. It is composed of a number of interconnected components, each of which plays a specific role in the overall architecture.
 
-Important Interfaces  
-*\<Description of important interfaces>*
+**PixelPulse App Diagram**
+![building block view PixelPulse App](images/building-block-view/pixelpulse-app.png)
 
-Insert your explanations of black boxes from level 1:
+**Components**
 
-If you use tabular form you will only describe your black boxes with
-name and responsibility according to the following schema:
+* **UI Components:** The UI is responsible for presenting the app's functionality to users. It includes screens for editing images, sharing images, and managing user accounts. For editing images, it directly loads the Pixlr API and keeps it encapsulated within this block, only its results (edited images) are forwarded.
+
+    *Purpose/Responsibility*
+    
+    The UI Components manage the presentation layer of the PixelPulse App, ensuring a user-friendly interface for image editing, sharing, and account management.
+
+    *Interfaces*
+    
+    - Interacts with Pixlr API for image editing.
+    - Communicates with Input Handling for user input.
+    - Collaborates with other UI components for seamless navigation.
+
+    *Quality/Performance Characteristics*
+    
+    - Responsive and intuitive user interface.
+    - Efficient integration with Pixlr for image editing.
+    - Consistent handling of user input.
+
+    *Directory/File Location*
+    
+    /PixelPulseApp/UIComponents
+
+    *Fulfilled Requirements*
+    
+    - R-2: The app should be easy to use and navigate.
+    - R-4: The app should seamlessly communicate with the database server.
+
+    *Open Issues/Problems/Risks*
+    
+    - Potential compatibility issues with different mobile devices.
+    - Ongoing optimization for better performance.
+
+* **Input Handling:** This component is responsible for receiving user input and directing it to the menu system and/or authentication system in a standardized manner.
+
+    *Purpose/Responsibility*
+    
+    Input Handling manages the reception and processing of user input, ensuring a smooth interaction with the PixelPulse App.
+
+    *Interfaces*
+    
+    - Interacts with UI Components for user input.
+    - Directs user input to Authentication and Menu System components.
+
+    *Quality/Performance Characteristics*
+    
+    - Standardized and consistent input processing.
+    - Efficient routing of user commands to appropriate components.
+
+    *Directory/File Location*
+    
+    /PixelPulseApp/InputHandling
+
+    *Fulfilled Requirements*
+    
+    - R-2: The app should be easy to use and navigate.
+    - R-4: The app should seamlessly communicate with the database server.
+
+    *Open Issues/Problems/Risks*
+    
+    - Continuous improvement for better user experience.
+
+* **Menu System:** The Menu System controls the current location of the user throughout the many menus and prepares the respective menu for further navigation (depending on authentication), other interaction, and hands the data over to UI Components for display.
+
+    *Purpose/Responsibility*
+    
+    The Menu System manages the navigation and presentation of menus within the PixelPulse App, ensuring a structured and user-friendly experience.
+
+    *Interfaces*
+    
+    - Collaborates with UI Components for menu display.
+    - Communicates with Authentication for user access rights.
+    - Receives data from Input Handling for menu preparation.
+
+    *Quality/Performance Characteristics*
+    
+    - Efficient menu navigation.
+    - Responsive menu updates based on user input.
+
+    *Directory/File Location*
+    
+    /PixelPulseApp/MenuSystem
+
+    *Fulfilled Requirements*
+    
+    - R-2: The app should be easy to use and navigate.
+    - R-4: The app should seamlessly communicate with the database server.
+
+    *Open Issues/Problems/Risks*
+    
+    - Potential complexity in handling a large number of menu options.
+
+* **Authentication:** Regulates which content a user gets to access and how by authenticating the user's rights through the Database Server. It further also regulates if and what data is transferred to and from the Database Server within the scope of the competencies of the front-end application.
+
+    *Purpose/Responsibility*
+    
+    Authentication manages user access rights, ensuring secure and authorized interactions with the PixelPulse App.
+
+    *Interfaces*
+    
+    - Collaborates with Database Server for user authentication.
+    - Interacts with Menu System for regulating user access.
+    - Communicates with Input Handling for user authentication data.
+
+    *Quality/Performance Characteristics*
+    
+    - Robust user authentication.
+    - Secure data transmission between the app and the database.
+
+    *Directory/File Location*
+    
+    /PixelPulseApp/Authentication
+
+    *Fulfilled Requirements*
+    
+    - R-4: The app should seamlessly communicate with the database server.
+    - R-5: The app should ensure secure user authentication.
+
+    *Open Issues/Problems/Risks*
+    
+    - Ongoing monitoring for potential security vulnerabilities.
 
-| **Name**         | **Responsibility** |
-|------------------|--------------------|
-| *\<black box 1>* |  *\<Text>*         |
-| *\<black box 2>* |  *\<Text>*         |
+## Level 3 - White Box Menu System
 
-If you use a list of black box descriptions then you fill in a separate
-black box template for every important building block . Its headline is
-the name of the black box.
+The Menu System is a critical component of the PixelPulse App responsible for managing the navigation and presentation of menus. It works in conjunction with other components to ensure a seamless user experience.
 
-### \<Name black box 1>
+**Menu System Diagram**
+![building block view Menu System](images/building-block-view/menu-system.png)
 
-Here you describe \<black box 1> according the the following black box
-template:
+**Components**
 
--   Purpose/Responsibility
+* **Menu Navigation Manager:** This component manages the navigation flow within the Menu System, ensuring users are directed to the appropriate menus based on their actions.
 
--   Interface(s), when they are not extracted as separate paragraphs.
-    This interfaces may include qualities and performance
-    characteristics.
+    *Purpose/Responsibility*
+    
+    The Menu Navigation Manager oversees the flow of navigation within the PixelPulse App, directing users to relevant menus based on their interactions.
 
--   (Optional) Quality-/Performance characteristics of the black box,
-    e.g.availability, run time behavior, ….
+    *Interfaces*
+    
+    - Collaborates with Permission Manager for user access rights.
+    - Communicates with Menu Content Manager for menu preparation.
 
--   (Optional) directory/file location
+    *Quality/Performance Characteristics*
+    
+    - Seamless and logical menu navigation.
+    - Efficient redirection based on user input.
 
--   (Optional) Fulfilled requirements (if you need traceability to
-    requirements).
+    *Directory/File Location*
+    
+    /PixelPulseApp/MenuSystem/MenuNavigationManager
 
--   (Optional) Open issues/problems/risks
+    *Fulfilled Requirements*
+    
+    - R-2: The app should be easy to use and navigate.
+    - R-4: The app should seamlessly communicate with the database server.
 
-*\<Purpose/Responsibility>*
+    *Open Issues/Problems/Risks*
+    
+    - Continuous improvement for optimizing navigation logic.
 
-*\<Interface(s)>*
+* **Permission Manager:** This component interacts with Authentication to manage user access rights within the Menu System, ensuring that users only see menus for which they have the necessary permissions.
 
-*\<(Optional) Quality/Performance Characteristics>*
+    *Purpose/Responsibility*
+    
+    The Permission Manager regulates user access rights within the Menu System, ensuring a secure and personalized experience.
 
-*\<(Optional) Directory/File Location>*
+    *Interfaces*
+    
+    - Collaborates with Authentication for user access information.
 
-*\<(Optional) Fulfilled Requirements>*
+    *Quality/Performance Characteristics*
+    
+    - Robust enforcement of user access permissions.
+    - Secure handling of user access data.
 
-*\<(optional) Open Issues/Problems/Risks>*
+    *Directory/File Location*
+    
+    /PixelPulseApp/MenuSystem/PermissionManager
 
-### \<Name black box 2>
+    *Fulfilled Requirements*
+    
+    - R-5: The app should ensure secure user authentication.
+    - R-6: The app should enforce user access permissions.
 
-*\<black box template>*
+    *Open Issues/Problems/Risks*
+    
+    - Ongoing monitoring for potential security vulnerabilities.
 
-### \<Name black box n>
+* **Menu Content Manager:** This component collaborates with UI Components to prepare menus for display, ensuring that the content is dynamically generated based on user interactions.
 
-*\<black box template>*
+    *Purpose/Responsibility*
+    
+    The Menu Content Manager prepares menus for display, dynamically generating content based on user interactions and permissions.
 
-### \<Name interface 1>
+    *Interfaces*
+    
+    - Communicates with UI Components for menu display.
 
-…
+    *Quality/Performance Characteristics*
+    
+    - Dynamic and responsive menu content generation.
+    - Efficient collaboration with UI Components.
 
-### \<Name interface m>
+    *Directory/File Location*
+    
+    /PixelPulseApp/MenuSystem/MenuContentManager
 
-## Level 2
+    *Fulfilled Requirements*
+    
+    - R-2: The app should be easy to use and navigate.
+    - R-4: The app should seamlessly communicate with the database server.
 
-Here you can specify the inner structure of (some) building blocks from
-level 1 as white boxes.
+    *Open Issues/Problems/Risks*
+    
+    - Potential complexity in managing a large number of menu options.
 
-You have to decide which building blocks of your system are important
-enough to justify such a detailed description. Please prefer relevance
-over completeness. Specify important, surprising, risky, complex or
-volatile building blocks. Leave out normal, simple, boring or
-standardized parts of your system
+## Level 3 - White Box Authentication
 
-### White Box *\<building block 1>*
+Authentication is a critical component responsible for managing user access rights and ensuring secure interactions with the PixelPulse App.
 
-…describes the internal structure of *building block 1*.
+**Authentication Diagram**
+![building block view Authentication](images/building-block-view/authentication.png)
 
-*\<white box template>*
+**Components**
 
-### White Box *\<building block 2>*
+* **Request Handler:** This component interacts with the REST Converter to handle incoming requests, ensuring proper processing and authentication.
 
-*\<white box template>*
+    *Purpose/Responsibility*
+    
+    The Request Handler manages incoming requests, ensuring proper handling and authentication of user actions.
 
-…
+    *Interfaces*
+    
+    - Collaborates with REST Converter for request processing.
 
-### White Box *\<building block m>*
+    *Quality/Performance Characteristics*
+    
+    - Efficient handling of incoming requests.
+    - Secure validation of user actions.
 
-*\<white box template>*
+    *Directory/File Location*
+    
+    /PixelPulseApp/Authentication/RequestHandler
 
-## Level 3
+    *Fulfilled Requirements*
+    
+    - R-4: The app should seamlessly communicate with the database server.
+    - R-5: The app should ensure secure user authentication.
 
-Here you can specify the inner structure of (some) building blocks from
-level 2 as white boxes.
+    *Open Issues/Problems/Risks*
+    
+    - Continuous improvement for optimizing request processing.
 
-When you need more detailed levels of your architecture please copy this
-part of arc42 for additional levels.
+* **REST Converter:** This component interacts with the Database Server and Session Manager to convert RESTful requests, ensuring proper communication and data transmission.
 
-### White Box \<\_building block x.1\_\>
+    *Purpose/Responsibility*
+    
+    The REST Converter converts RESTful requests, facilitating communication between the app, the database, and session management.
 
-Specifies the internal structure of *building block x.1*.
+    *Interfaces*
+    
+    - Collaborates with Database Server and Session Manager for data transmission.
 
-*\<white box template>*
+    *Quality/Performance Characteristics*
+    
+    - Accurate conversion of RESTful requests.
+    - Secure handling of data transmission.
 
-### White Box \<\_building block x.2\_\>
+    *Directory/File Location*
+    
+    /PixelPulseApp/Authentication/RESTConverter
 
-*\<white box template>*
+    *Fulfilled Requirements*
+    
+    - R-4: The app should seamlessly communicate with the database server.
+    - R-5: The app should ensure secure user authentication.
 
-### White Box \<\_building block y.1\_\>
+    *Open Issues/Problems/Risks*
+    
+    - Ongoing monitoring for potential security vulnerabilities.
 
-*\<white box template>*
+* **Session Manager:** This component manages user sessions, ensuring a secure and persistent user experience throughout interactions with the PixelPulse App.
 
-<div style="page-break-after: always;"></div>
+    *Purpose/Responsibility*
+    
+    The Session Manager oversees user sessions, providing a secure and persistent experience during app interactions.
+
+    *Interfaces*
+    
+    - Collaborates with Menu System for session management.
+
+    *Quality/Performance Characteristics*
+    
+    - Secure management of user sessions.
+    - Persistent user experience across app interactions.
+
+    *Directory/File Location*
+    
+    /PixelPulseApp/Authentication/SessionManager
+
+    *Fulfilled Requirements*
+    
+    - R-5: The app should ensure secure user authentication.
+    - R-7: The app should provide a seamless user experience.
+
+    *Open Issues/Problems/Risks*
+    
+    - Ongoing optimization for better session management.
 
 # Runtime View
 
