@@ -3,21 +3,6 @@
 
 # Introduction and Goals
 
-<!---
-Describes the relevant requirements and the driving forces that software
-architects and development team must consider. These include
-
--   underlying business goals,
-
--   essential features,
-
--   essential functional requirements,
-
--   quality goals for the architecture and
-
--   relevant stakeholders and their expectations
---->
-
 This document describes the architecture of PixelPulse, an image sharing app that uses
 third-party integration to allow users to edit images, as well as the ability to interact
 with content other users have posted and creating collections of images/posts.
@@ -354,77 +339,13 @@ Specifies the internal structure of *building block x.1*.
 
 # Runtime View
 
-<div class="formalpara-title">
+## \<Runtime Upload>
 
-**Contents**
+![Runtime Upload](images/runtime-view-diagrams/Runtime_Upload.png)
 
-</div>
+## \<Runtime Register>
 
-The runtime view describes concrete behavior and interactions of the
-system’s building blocks in form of scenarios from the following areas:
-
--   important use cases or features: how do building blocks execute
-    them?
-
--   interactions at critical external interfaces: how do building blocks
-    cooperate with users and neighboring systems?
-
--   operation and administration: launch, start-up, stop
-
--   error and exception scenarios
-
-Remark: The main criterion for the choice of possible scenarios
-(sequences, workflows) is their **architectural relevance**. It is
-**not** important to describe a large number of scenarios. You should
-rather document a representative selection.
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-You should understand how (instances of) building blocks of your system
-perform their job and communicate at runtime. You will mainly capture
-scenarios in your documentation to communicate your architecture to
-stakeholders that are less willing or able to read and understand the
-static models (building block view, deployment view).
-
-<div class="formalpara-title">
-
-**Form**
-
-</div>
-
-There are many notations for describing scenarios, e.g.
-
--   numbered list of steps (in natural language)
-
--   activity diagrams or flow charts
-
--   sequence diagrams
-
--   BPMN or EPCs (event process chains)
-
--   state machines
-
--   …
-
-See [Runtime View](https://docs.arc42.org/section-6/) in the arc42
-documentation.
-
-## \<Runtime Scenario 1>
-
--   *\<insert runtime diagram or textual description of the scenario>*
-
--   *\<insert description of the notable aspects of the interactions
-    between the building block instances depicted in this diagram.>*
-
-## \<Runtime Scenario 2>
-
-## …
-
-## \<Runtime Scenario n>
+![Runtime Register](images/runtime-view-diagrams/Runtime_Register.png)
 
 <div style="page-break-after: always;"></div>
 
