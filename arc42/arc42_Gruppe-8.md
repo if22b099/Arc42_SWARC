@@ -24,106 +24,40 @@ with content other users have posted and creating collections of images/posts.
 
 ## Requirements Overview
 
-<!--
-<div class="formalpara-title">
-
-**Contents**
-
-</div>
-
-Short description of the functional requirements, driving forces,
-extract (or abstract) of requirements. Link to (hopefully existing)
-requirements documents (with version number and information where to
-find it).
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-From the point of view of the end users a system is created or modified
-to improve support of a business activity and/or improve the quality.
-
-<div class="formalpara-title">
-
-**Form**
-
-</div>
-
-Short textual description, probably in tabular use-case format. If
-requirements documents exist this overview should refer to these
-documents.
-
-Keep these excerpts as short as possible. Balance readability of this
-document with potential redundancy w.r.t to requirements documents.
-
-See [Introduction and Goals](https://docs.arc42.org/section-1/) in the
-arc42 documentation.
--->
-
 The following requirements for PixelPulse have been established in the form of
 use-case diagrams:
 
-**Use Case 1**
-![Use Case Diagram 1](images/use-case-diagrams/USE_CASE_1.png)
-The user wants to create a new account.
+**Use Case 1**  
+The user wants to create a new account.  
+<div style="width: 50%;">
+    ![Use Case Diagram 1](images/use-case-diagrams/USE_CASE_1.png)  
+</div>
 
-**Use Case 2**
-![Use Case Diagram 2](images/use-case-diagrams/USE_CASE_2.png)
-The user logs in to their account.
+**Use Case 2**  
+The user logs in to their account.  
+<div style="width: 50%;">
+    ![Use Case Diagram 2](images/use-case-diagrams/USE_CASE_2.png)  
+</div>
 
-**Use Case 3**
-![Use Case Diagram 3](images/use-case-diagrams/USE_CASE_3.png)
-The user uploads and image to the app.
+**Use Case 3**  
+The user uploads and image to the app.  
+<div style="width: 50%;">
+    ![Use Case Diagram 3](images/use-case-diagrams/USE_CASE_3.png)  
+</div>
 
-**Use Case 4**
-![Use Case Diagram 4](images/use-case-diagrams/USE_CASE_4.png)
-The user interacts with an image uploaded by another user by commenting and/or liking.
+**Use Case 4**  
+The user interacts with an image uploaded by another user by commenting and/or liking.  
+<div style="width: 50%;">
+    ![Use Case Diagram 4](images/use-case-diagrams/USE_CASE_4.png)  
+</div>
 
-**Use Case 5**
-![Use Case Diagram 5](images/use-case-diagrams/USE_CASE_5.png)
-The user accesses Pixlr's editing tools.
+**Use Case 5**  
+The user accesses Pixlr's editing tools.  
+<div style="width: 50%;">
+    ![Use Case Diagram 5](images/use-case-diagrams/USE_CASE_5.png)  
+</div>
 
 ## Quality Goals
-
-<!--
-<div class="formalpara-title">
-
-**Contents**
-
-</div>
-
-The top three (max five) quality goals for the architecture whose
-fulfillment is of highest importance to the major stakeholders. We
-really mean quality goals for the architecture. Don’t confuse them with
-project goals. They are not necessarily identical.
-
-Consider this overview of potential topics (based upon the ISO 25010
-standard):
-
-![Categories of Quality
-Requirements](images/01_2_iso-25010-topics-EN.drawio.png)
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-You should know the quality goals of your most important stakeholders,
-since they will influence fundamental architectural decisions. Make sure
-to be very concrete about these qualities, avoid buzzwords. If you as an
-architect do not know how the quality of your work will be judged…
-
-<div class="formalpara-title">
-
-**Form**
-
-</div>
-
-A table with quality goals and concrete scenarios, ordered by priorities
--->
 
 |   | **Quality**                   | **Motivation**                                                        |
 |---|-------------------------------|-----------------------------------------------------------------------|
@@ -132,12 +66,6 @@ A table with quality goals and concrete scenarios, ordered by priorities
 | 3 | Availability                  | Minimize downtime and ensure the app is available when users need it. |
 
 ## Stakeholders
-
-<div class="formalpara-title">
-
-**Contents**
-
-</div>
 
 The following individuals are stakeholders of the system:
 
@@ -154,15 +82,6 @@ The following individuals are stakeholders of the system:
 -   Lucas Rodriguez,  
     Photography Expert, Snap & Shoot Magazine
 
-<div class="formalpara-title">
-
-**Motivation**
-
-**Form**
-
-</div>
-
-
 | Role                     | Name                 | Contact                      | Expectations       |
 |--------------------------|----------------------|------------------------------|--------------------|
 | *\<Marketing Manager>*   | *\<Sarah Chen>*      | *\<Bold Branding Agency>*    | *\<Expectation-1>* |
@@ -174,18 +93,8 @@ The following individuals are stakeholders of the system:
 
 <div style="page-break-after: always;"></div>
 
+<!-- Architecture Constraints -->
 # Architecture Constraints
-
-<div class="formalpara-title">
-
-**Contents**
-
-</div>
-
-Any requirement that constraints software architects in their freedom of
-design and implementation decisions or decision about the development
-process. These constraints sometimes go beyond individual systems and
-are valid for whole organizations and companies.
 
 | **Constraints**                                                | **Background and/or Motivation**                                      |
 |----------------------------------------------------------------|-----------------------------------------------------------------------|
@@ -194,30 +103,6 @@ are valid for whole organizations and companies.
 | Third-Party Integration Constraint (Technical)                 | Dependent on Pixlr's API stability and availability                   |
 | Security and Privacy Constraint (Technical and Organizational) | Legal and regulatory requirements (consequences and damage)           |
 | User Adoption Constraint (Organizational)                      | App relies on user adoption (actively address user feedback)          |
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-Architects should know exactly where they are free in their design
-decisions and where they must adhere to constraints. Constraints must
-always be dealt with; they may be negotiable, though.
-
-<div class="formalpara-title">
-
-**Form**
-
-</div>
-
-Simple tables of constraints with explanations. If needed you can
-subdivide them into technical constraints, organizational and political
-constraints and conventions (e.g. programming or versioning guidelines,
-documentation or naming conventions)
-
-See [Architecture Constraints](https://docs.arc42.org/section-2/) in the
-arc42 documentation.
 
 <div style="page-break-after: always;"></div>
 
@@ -228,32 +113,6 @@ arc42 documentation.
 
 <!-- Business Context -->
 ## Business Context
-
-<div class="formalpara-title">
-
-**Contents**
-
-</div>
-
-Specification of **all** communication partners (users, IT-systems, …)
-with explanations of domain specific inputs and outputs or interfaces.
-Optionally you can add domain specific formats or communication
-protocols.
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-All stakeholders should understand which data are exchanged with the
-environment of the system.
-
-<div class="formalpara-title">
-
-**Form**
-
-</div>
 
 **Business Context**  
 ![Business Context](images/system-context-diagram/BusinessContext.png)  
@@ -267,49 +126,8 @@ environment of the system.
 | PixelPulse - External Services | Payment details for subscriptions   | Subscription confirmation, receipts |
 | PixelPulse - Social Media      | Shared images, user engagement data | Increased brand visibility          |
 
-
-<!--
-All kinds of diagrams that show the system as a black box and specify
-the domain interfaces to communication partners.
-
-Alternatively (or additionally) you can use a table. The title of the
-table is the name of your system, the three columns contain the name of
-the communication partner, the inputs, and the outputs.
-
-**\<Diagram or Table>**
-
-**\<optionally: Explanation of external domain interfaces>**
--->
-
 <!-- Technical Context -->
 ## Technical Context
-
-<div class="formalpara-title">
-
-**Contents**
-
-</div>
-
-Technical interfaces (channels and transmission media) linking your
-system to its environment. In addition a mapping of domain specific
-input/output to the channels, i.e. an explanation which I/O uses which
-channel.
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-Many stakeholders make architectural decision based on the technical
-interfaces between the system and its context. Especially infrastructure
-or hardware designers decide these technical interfaces.
-
-<div class="formalpara-title">
-
-**Form**  
-
-</div>
 
 **Technical Context**  
 ![Technical Context](images/system-context-diagram/TechnicalContext.png)  
@@ -322,19 +140,6 @@ or hardware designers decide these technical interfaces.
 | Pixlr - PixelPulse Server             | Edited images, processing status    | Integration via Pixlr API, RESTful APIs  |
 | PixelPulse Server - External Services | Payment details for subscriptions   | Secure communication channels, HTTPS     |
 | PixelPulse Server - Social Media      | Shared images, user engagement data | APIs (e.g., Facebook API, Instagram API) |
-
-
-<!--
-E.g. UML deployment diagram describing channels to neighboring systems,
-together with a mapping table showing the relationships between channels
-and input/output.
-
-**\<Diagram or Table>**
-
-**\<optionally: Explanation of technical interfaces>**
-
-**\<Mapping Input/Output to Channels>**
--->
 
 <div style="page-break-after: always;"></div>
 
