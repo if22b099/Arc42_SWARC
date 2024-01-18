@@ -29,23 +29,23 @@ use-case diagrams:
 
 **Use Case 1**  
 The user wants to create a new account.  
-![Use Case Diagram 1](images/use-case-diagrams/USE_CASE_1.png){ width=400px }  
+![Use Case Diagram 1](images/use-case-diagrams/USE_CASE_1.png)  
 
 **Use Case 2**  
 The user logs in to their account.  
-![Use Case Diagram 2](images/use-case-diagrams/USE_CASE_2.png){ width=400px }  
+![Use Case Diagram 2](images/use-case-diagrams/USE_CASE_2.png)  
 
 **Use Case 3**  
 The user uploads and image to the app.  
-![Use Case Diagram 3](images/use-case-diagrams/USE_CASE_3.png){ width=400px }  
+![Use Case Diagram 3](images/use-case-diagrams/USE_CASE_3.png)  
 
 **Use Case 4**  
 The user interacts with an image uploaded by another user by commenting and/or liking.  
-![Use Case Diagram 4](images/use-case-diagrams/USE_CASE_4.png){ width=400px }  
+![Use Case Diagram 4](images/use-case-diagrams/USE_CASE_4.png)  
 
 **Use Case 5**  
 The user accesses Pixlr's editing tools.  
-![Use Case Diagram 5](images/use-case-diagrams/USE_CASE_5.png){ width=400px }  
+![Use Case Diagram 5](images/use-case-diagrams/USE_CASE_5.png)  
 
 ## Quality Goals
 
