@@ -169,10 +169,10 @@ plays a specific role in the overall architecture.
     /PixelPulseApp
 
 * Fulfilled Requirements:
-    * R-1: The app should allow users to edit and share images.
-    * R-2: The app should be easy to use and navigate.
-    * R-3: The app should provide a variety of image editing tools.
-    * R-4: The app should seamlessly communicate with the database server.
+    * The app should allow users to edit and share images.
+    * The app should be easy to use and navigate.
+    * The app should provide a variety of image editing tools.
+    * The app should seamlessly communicate with the database server.
 
 * Open Issues/Problems/Risks:
     * Potential compatibility issues with different mobile devices.
@@ -198,9 +198,9 @@ plays a specific role in the overall architecture.
     /PixelPulseApp/Pixlr
 
 * Fulfilled Requirements:
-    * R-1: The app should provide a variety of image editing tools.
-    * R-2: The app should be powerful and efficient.
-    * R-3: The app should provide a user-friendly interface.
+    * The app should provide a variety of image editing tools.
+    * The app should be powerful and efficient.
+    * The app should provide a user-friendly interface.
 
 * Open Issues/Problems/Risks:
     * Potential compatibility issues with different image formats.
@@ -255,8 +255,8 @@ The PixelPulse App is a user-friendly and efficient mobile application that allo
 
     *Fulfilled Requirements*
     
-    - R-2: The app should be easy to use and navigate.
-    - R-4: The app should seamlessly communicate with the database server.
+    - The app should be easy to use and navigate.
+    - The app should seamlessly communicate with the database server.
 
     *Open Issues/Problems/Risks*
     
@@ -285,8 +285,8 @@ The PixelPulse App is a user-friendly and efficient mobile application that allo
 
     *Fulfilled Requirements*
     
-    - R-2: The app should be easy to use and navigate.
-    - R-4: The app should seamlessly communicate with the database server.
+    - The app should be easy to use and navigate.
+    - The app should seamlessly communicate with the database server.
 
     *Open Issues/Problems/Risks*
     
@@ -315,8 +315,8 @@ The PixelPulse App is a user-friendly and efficient mobile application that allo
 
     *Fulfilled Requirements*
     
-    - R-2: The app should be easy to use and navigate.
-    - R-4: The app should seamlessly communicate with the database server.
+    - The app should be easy to use and navigate.
+    - The app should seamlessly communicate with the database server.
 
     *Open Issues/Problems/Risks*
     
@@ -345,8 +345,8 @@ The PixelPulse App is a user-friendly and efficient mobile application that allo
 
     *Fulfilled Requirements*
     
-    - R-4: The app should seamlessly communicate with the database server.
-    - R-5: The app should ensure secure user authentication.
+    - The app should seamlessly communicate with the database server.
+    - The app should ensure secure user authentication.
 
     *Open Issues/Problems/Risks*
     
@@ -383,8 +383,8 @@ The Menu System is a critical component of the PixelPulse App responsible for ma
 
     *Fulfilled Requirements*
     
-    - R-2: The app should be easy to use and navigate.
-    - R-4: The app should seamlessly communicate with the database server.
+    - The app should be easy to use and navigate.
+    - The app should seamlessly communicate with the database server.
 
     *Open Issues/Problems/Risks*
     
@@ -411,8 +411,8 @@ The Menu System is a critical component of the PixelPulse App responsible for ma
 
     *Fulfilled Requirements*
     
-    - R-5: The app should ensure secure user authentication.
-    - R-6: The app should enforce user access permissions.
+    - The app should ensure secure user authentication.
+    - The app should enforce user access permissions.
 
     *Open Issues/Problems/Risks*
     
@@ -439,8 +439,8 @@ The Menu System is a critical component of the PixelPulse App responsible for ma
 
     *Fulfilled Requirements*
     
-    - R-2: The app should be easy to use and navigate.
-    - R-4: The app should seamlessly communicate with the database server.
+    - The app should be easy to use and navigate.
+    - The app should seamlessly communicate with the database server.
 
     *Open Issues/Problems/Risks*
     
@@ -476,8 +476,8 @@ Authentication is a critical component responsible for managing user access righ
 
     *Fulfilled Requirements*
     
-    - R-4: The app should seamlessly communicate with the database server.
-    - R-5: The app should ensure secure user authentication.
+    - The app should seamlessly communicate with the database server.
+    - The app should ensure secure user authentication.
 
     *Open Issues/Problems/Risks*
     
@@ -504,8 +504,8 @@ Authentication is a critical component responsible for managing user access righ
 
     *Fulfilled Requirements*
     
-    - R-4: The app should seamlessly communicate with the database server.
-    - R-5: The app should ensure secure user authentication.
+    - The app should seamlessly communicate with the database server.
+    - The app should ensure secure user authentication.
 
     *Open Issues/Problems/Risks*
     
@@ -532,8 +532,8 @@ Authentication is a critical component responsible for managing user access righ
 
     *Fulfilled Requirements*
     
-    - R-5: The app should ensure secure user authentication.
-    - R-7: The app should provide a seamless user experience.
+    - The app should ensure secure user authentication.
+    - The app should provide a seamless user experience.
 
     *Open Issues/Problems/Risks*
     
