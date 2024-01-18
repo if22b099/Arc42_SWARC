@@ -57,14 +57,14 @@ The following individuals are stakeholders of the system:
 -   Lucas Rodriguez,  
     Photography Expert, Snap & Shoot Magazine
 
-| Role                     | Name                 | Contact                      | Expectations       |
-|--------------------------|----------------------|------------------------------|--------------------|
-| *\<Marketing Manager>*   | *\<Sarah Chen>*      | *\<Bold Branding Agency>*    | *\<Expectation-1>* |
-| *\<Project Manager>*     | *\<Michael Nguyen>*  | *\<Digital Dreams Inc.>*     | *\<Expectation-2>* |
-| *\<Lead Developer>*      | *\<Ava Patel>*       | *\<Pixel Perfect Solutions>* | *\<Expectation-2>* |
-| *\<UX/UI Designer>*      | *\<Emily Wong>*      | *\<Creative Co.>*            | *\<Expectation-2>* |
-| *\<User Representative>* | *\<Samir Singh>*     | *\<Photography Enthusiast>*  | *\<Expectation-2>* |
-| *\<Photography Expert>*  | *\<Lucas Rodriguez>* | *\<Snap & Shoot Magazine>*   | *\<Expectation-2>* |
+| Role                 | Name              | Contact                   | Expectations                                                   |
+|----------------------|-------------------|---------------------------|----------------------------------------------------------------|
+| Marketing Manager>   | Sarah Chen        | Bold Branding Agency      | Brand Alignment, User-Friendly, Marketing Effectiveness.       |
+| Project Manager      | Michael Nguyen    | Digital Dreams Inc.       | Timely Delivery, Budget Adherence, Clear Communication.        |
+| Lead Developer       | Ava Patel         | Pixel Perfect Solutions   | Clear Requirements, Coding Standards, Resource Availability.   |
+| UX/UI Designer       | Emily Wong        | Creative Co.              | Detailed Design, User Collaboration, Intuitive Interface.      |
+| User Representative  | Samir Singh       | Photography Enthusiast    | Seamless Experience, Community Engagement, User Feedback.      |
+| Photography Expert   | Lucas Rodriguez   | Snap & Shoot Magazine     | High-Quality Photos, Advanced Tools, Credibility.              |
 
 <div style="page-break-after: always;"></div>
 
@@ -140,7 +140,7 @@ interfaces, packages, libraries, frameworks, layers, partitions, tiers,
 functions, macros, operations, data structures, …) as well as their
 dependencies (relationships, associations, …)
 
-**Overview Diagram**
+**Overview Diagram**  
 ![pixelpulse building block overview diagram](images/building-block-view/pixelpulse.png)
 
 **Motivation**
@@ -239,7 +239,7 @@ plays a specific role in the overall architecture.
 
 The PixelPulse App is a user-friendly and efficient mobile application that allows users to edit and share their images. It is composed of a number of interconnected components, each of which plays a specific role in the overall architecture.
 
-**PixelPulse App Diagram**
+**PixelPulse App Diagram**  
 ![building block view PixelPulse App](images/building-block-view/pixelpulse-app.png)
 
 **Components**
@@ -369,7 +369,7 @@ The PixelPulse App is a user-friendly and efficient mobile application that allo
 
 The Menu System is a critical component of the PixelPulse App responsible for managing the navigation and presentation of menus. It works in conjunction with other components to ensure a seamless user experience.
 
-**Menu System Diagram**
+**Menu System Diagram**  
 ![building block view Menu System](images/building-block-view/menu-system.png)
 
 **Components**
@@ -463,7 +463,7 @@ The Menu System is a critical component of the PixelPulse App responsible for ma
 
 Authentication is a critical component responsible for managing user access rights and ensuring secure interactions with the PixelPulse App.
 
-**Authentication Diagram**
+**Authentication Diagram**  
 ![building block view Authentication](images/building-block-view/authentication.png)
 
 **Components**
