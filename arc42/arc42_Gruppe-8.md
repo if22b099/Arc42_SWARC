@@ -106,13 +106,13 @@ The following individuals are stakeholders of the system:
 
 <div class="formalpara-title">
 
-| Quality Goal                 | Scenario                                          | Solution Approach                              |
-| ---------------------------- | ------------------------------------------------- | ----------------------------------------------- |
-| User Experience and Performance | Ensuring fast image uploads and downloads.        | Optimize image processing and compression.     |
-| Security                     | Prevent unauthorized access to user data.         | Implement Two-Factor Authentication (2FA).    |
-| Pixlr Integration            | Enabling users to seamlessly edit images.         | Integrate Pixlr's API for image editing.       |
-| Relational Database Management | Managing structured data effectively.             | Choose PostgreSQL for relational database management. |
-| Cloud Hosting                | Ensuring scalability and reliable hosting.        | Select AWS as the cloud service provider.      |
+| Quality Goal                    | Scenario                                          | Solution Approach                                     |
+| ------------------------------- | ------------------------------------------------- | ----------------------------------------------------- |
+| User Experience and Performance | Ensuring fast image uploads and downloads.        | Optimize image processing and compression.            |
+| Security                        | Prevent unauthorized access to user data.         | Implement Two-Factor Authentication (2FA).            |
+| Pixlr Integration               | Enabling users to seamlessly edit images.         | Integrate Pixlr's API for image editing.              |
+| Relational Database Management  | Managing structured data effectively.             | Choose PostgreSQL for relational database management. |
+| Monolithic Architecture         | Ensuring centralized management.                  | Monolithic architecture for streamlined management.   |
 
 <div style="page-break-after: always;"></div>
 
@@ -622,54 +622,6 @@ Authentication is a critical component responsible for managing user access righ
 <div style="page-break-after: always;"></div>
 
 # Architecture Decisions
-<!--
-<div class="formalpara-title">
-
-**Contents**
-
-</div>
-
-Important, expensive, large scale or risky architecture decisions
-including rationales. With "decisions" we mean selecting one alternative
-based on given criteria.
-
-Please use your judgement to decide whether an architectural decision
-should be documented here in this central section or whether you better
-document it locally (e.g. within the white box template of one building
-block).
-
-Avoid redundancy. Refer to section 4, where you already captured the
-most important decisions of your architecture.
-
-<div class="formalpara-title">
-
-**Motivation**
-
-</div>
-
-Stakeholders of your system should be able to comprehend and retrace
-your decisions.
-
-<div class="formalpara-title">
-
-**Form**
-
-</div>
-
-
-Various options:
-
--   ADR ([Documenting Architecture
-    Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions))
-    for every important decision
-
--   List or table, ordered by importance and consequences or:
-
--   more detailed in form of separate sections per decision
-
-See [Architecture Decisions](https://docs.arc42.org/section-9/) in the
-arc42 documentation. There you will find links and examples about ADR.
--->
 
 ## ADR 1: User Authentication
 
@@ -691,15 +643,15 @@ arc42 documentation. There you will find links and examples about ADR.
 
 **Consequences:** Relational DB provides structured data storage but may have scalability challenges for certain use cases.
 
-## ADR 3: Choosing a Cloud Service for Hosting and Scalability
+## ADR 3: Choosing Monolithic Architecture for Hosting
 
-**Context:** The system needs a scalable and reliable cloud service provider for hosting its components. Factors include performance, cost, availability, and the ability to integrate with other services.
+**Context:** The initial plan for a cloud-based solution is reconsidered, and a decision is made to opt for a monolithic architecture instead. This decision is primarily influenced by the size of the team (approximately 4 members), aiming for centralized management to accommodate the team size effectively and cost considerations.
 
-**Decision:** Selected AWS for hosting and scalability.
+**Decision:** Selected Monolithic Architecture for hosting and management.
 
 **Status:** Accepted
 
-**Consequences:** AWS offers a robust cloud infrastructure but may involve additional costs compared to other cloud providers.
+**Consequences:** The monolithic architecture provides centralized management, simplifying deployment and maintenance, which aligns well with the size of the team. However, it may face challenges in scalability compared to a cloud-based solution. Team size considerations and the nature of the application influence this decision. Additional measures will be taken to optimize performance and scalability within the monolithic architecture. This decision may impact future scalability and could be revisited as the system evolves.
 
 <div style="page-break-after: always;"></div>
 
@@ -749,10 +701,10 @@ arc42 documentation. There you will find links and examples about ADR.
     - Database queries must be optimized for efficient retrieval of user data.
       - *Scenario:* Retrieval of images from the database should take less than one second.
 
-- **Cloud Hosting**
+- **Monolithic Architecture**
   - **Scalability:**
-    - Cloud infrastructure must scale dynamically based on demand.
-      - *Scenario:* The system can handle a 100% increase in concurrent users during peak times.
+    - The monolithic architecture may face challenges in scaling dynamically based on demand.
+      - *Scenario:* Scaling to handle a 100% increase in concurrent users during peak times might require additional resources and could be limited by the architecture.
   - **Data Redundancy:**
     - Data must be redundantly stored to prevent data loss.
       - *Scenario:* Automatic data recovery in the event of server failure.
@@ -814,11 +766,11 @@ arc42 documentation. There you will find links and examples about ADR.
     - *Scenario:* A user retrieves a collection of images associated with their account.
     - *Expected Outcome:* The query executes quickly, providing the user with their image collection in less than one second.
 
-### Cloud Hosting
+### Monolithic Architecture
 
 11. **Scalability Scenario:**
     - *Scenario:* Concurrent users increase by 100% during a promotional event.
-    - *Expected Outcome:* Cloud infrastructure dynamically scales to accommodate the increased user load.
+    - *Expected Outcome:* The monolithic architecture may face challenges in dynamically scaling to accommodate the increased user load during peak times.
 
 12. **Data Redundancy Scenario:**
     - *Scenario:* A server hosting user data fails, triggering automatic data recovery.
